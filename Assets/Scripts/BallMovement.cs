@@ -29,7 +29,17 @@ public class BallMovement : MonoBehaviour {
 
         float moveVertical = -initial + Random.value * initial * 2;
 
+        //float myTime = 0.0f;
+        //while (myTime < 2)
+        //{
+        //    myTime += Time.deltaTime;
+        //    Vector2 noMovement = new Vector2(0, 0);
+        //    rBody.velocity = noMovement * speed;
+        //}
+
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+
+
         rBody.velocity = movement * speed;
 	}
 
@@ -46,7 +56,7 @@ public class BallMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
 
-	}
+        rBody.freezeRotation = true;
+    }
 }

@@ -15,20 +15,84 @@ public class BallRespawn : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "DEAD1")
+        if (leftWin == 10 || rightWin == 10)
         {
-            //Destroy(this.gameObject);
-            leftWin += 1;
-            Instantiate(this.gameObject, new Vector2(0, 0), this.transform.rotation);
+        if (leftWin == 10 && rightWin != 10)
+        {
+            if (other.tag == "DEAD1")
+            {
 
+                leftWin += 1;
+                Destroy(this.gameObject);
+
+            }
+            if (other.tag == "DEAD2")
+            {
+
+                rightWin += 1;
+                Instantiate(this.gameObject, new Vector2(0, 0), this.transform.rotation);
+                Destroy(this.gameObject);
+            }
         }
-        if (other.tag == "DEAD2")
+        else
+        if (leftWin != 10 && rightWin == 10)
         {
-            //Destroy(this.gameObject);
-            rightWin += 1;
-            Instantiate(this.gameObject, new Vector2(0, 0), this.transform.rotation);
+            if (other.tag == "DEAD1")
+            {
+
+                leftWin += 1;
+                Instantiate(this.gameObject, new Vector2(0, 0), this.transform.rotation);
+                Destroy(this.gameObject);
+
+            }
+            if (other.tag == "DEAD2")
+            {
+
+                rightWin += 1;
+                Destroy(this.gameObject);
+            }
         }
-        
+        else
+        if (leftWin == 10 && rightWin == 10)
+        {
+            if (other.tag == "DEAD1")
+            {
+
+                leftWin += 1;
+                Destroy(this.gameObject);
+
+            }
+            if (other.tag == "DEAD2")
+            {
+
+                rightWin += 1;
+                Destroy(this.gameObject);
+            }
+        }
+        }
+        else
+        {
+        if (leftWin < 11 && rightWin < 11) { 
+            if (other.tag == "DEAD1")
+            {
+                
+                leftWin += 1;
+                Instantiate(this.gameObject, new Vector2(0, 0), this.transform.rotation);
+                Destroy(this.gameObject);
+
+            }
+            if (other.tag == "DEAD2")
+            {
+                
+                rightWin += 1;
+                Instantiate(this.gameObject, new Vector2(0, 0), this.transform.rotation);
+                Destroy(this.gameObject);
+            }
+        }
+        }
+
+
+
     }
 
     // Update is called once per frame

@@ -10,16 +10,16 @@ public class LeftScore : MonoBehaviour {
     void UpdateScoreText()
     {
         if(BallRespawn.leftWin < 11 && BallRespawn.rightWin < 11) { 
-        scoreText.text = BallRespawn.leftWin.ToString() + "        " + BallRespawn.rightWin.ToString();
+        scoreText.text = "     " + BallRespawn.rightWin.ToString() + "        " + BallRespawn.leftWin.ToString();
         }
         if(BallRespawn.leftWin >= 11)
         {
-            scoreText.text = "PLAYER ONE WINS!";
+            scoreText.text = "RIGHT PLAYER WINS!";
             BallRespawn.rightWin = 0;
         }
         if (BallRespawn.rightWin >= 11)
         {
-            scoreText.text = "PLAYER TWO WINS!";
+            scoreText.text = "LEFT PLAYER WINS!";
             BallRespawn.leftWin = 0;
         }
     }

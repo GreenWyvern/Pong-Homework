@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  initial: 1
+  initial: 1.5
 --- !u!114 &114950354196841150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,7 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1482050525569576}
-  ballSpawn: {fileID: 1482050525569576}
 --- !u!212 &212622542898388254
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -155,5 +154,3 @@ SpriteRenderer:
   m_Size: {x: 0.25, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
