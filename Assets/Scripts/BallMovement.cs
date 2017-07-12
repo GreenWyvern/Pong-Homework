@@ -8,6 +8,8 @@ public class BallMovement : MonoBehaviour {
     public float speed;
     public float initial;
 
+    
+
 	// Use this for initialization
 	void Start () {
         rBody = this.GetComponent<Rigidbody2D>();
@@ -28,9 +30,21 @@ public class BallMovement : MonoBehaviour {
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
         rBody.velocity = movement * speed;
 	}
-	
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Paddle")
+        {
+            //rBody = this.GetComponent<Rigidbody2D>();
+            //rBody.velocity *= -1;
+            
+
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
 		
+
 	}
 }
