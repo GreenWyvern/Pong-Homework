@@ -8,15 +8,19 @@ public class BallMovement : MonoBehaviour {
     public float speed;
     public float initial;
 
+   IEnumerator Pause()
+    {
+        yield return new WaitForSeconds(2.5f);
+    }
 
 	// Use this for initialization
 	void Start () {
-       
+
+        StartCoroutine(Pause());
 
         rBody = this.GetComponent<Rigidbody2D>();
-
+        
         float moveHorizontal = 0;
-
 
         if (Random.value > 0.5)
         {
@@ -38,8 +42,7 @@ public class BallMovement : MonoBehaviour {
         //}
 
         Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-
-
+        
         rBody.velocity = movement * speed;
 	}
 
