@@ -8,13 +8,15 @@ public class BallMovement : MonoBehaviour {
     public float speed;
     public float initial;
 
-    
 
 	// Use this for initialization
 	void Start () {
+       
+
         rBody = this.GetComponent<Rigidbody2D>();
 
         float moveHorizontal = 0;
+
 
         if (Random.value > 0.5)
         {

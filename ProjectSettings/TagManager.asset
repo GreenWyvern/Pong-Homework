@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bounce
   - Paddle
+  - DEAD1
+  - DEAD2
   layers:
   - Default
   - TransparentFX
